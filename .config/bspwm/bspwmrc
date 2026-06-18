@@ -1,8 +1,14 @@
 #!/bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x pulseaudio > /dev/null || pulseaudio --start
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+# DP-1 es el monitor principal (derecha), HDMI-1 secundario (izquierda)
+xrandr --output DP-1 --primary --mode 2560x1440 --pos 1920x0 \
+       --output HDMI-1 --mode 1920x1080 --pos 0x0
+
+bspc monitor DP-1   -d I II III IV V VI VII
+bspc monitor HDMI-1 -d VIII IX X
 
 bspc config border_width         2
 bspc config window_gap          12

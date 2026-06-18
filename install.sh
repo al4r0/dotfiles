@@ -6,7 +6,7 @@ apt-get update -qq
 apt-get install -y \
     xorg bspwm sxhkd kitty \
     polybar rofi dmenu \
-    alsa-utils pavucontrol \
+    pulseaudio alsa-utils pavucontrol \
     xcursor-themes dmz-cursor-theme \
     x11-xserver-utils xterm \
     git
@@ -28,6 +28,10 @@ cp "$DOTFILES/.xinitrc"                   ~/
 
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
+
+echo "==> Instalando scripts del sistema..."
+cp "$DOTFILES/bin/vol-up" /usr/local/bin/vol-up
+chmod +x /usr/local/bin/vol-up
 
 echo ""
 echo "Listo. Ejecuta: startx"

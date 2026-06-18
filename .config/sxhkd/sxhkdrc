@@ -1,3 +1,13 @@
+# ── Volumen (rueda del teclado) ──────────────────────────────
+XF86AudioRaiseVolume
+    vol-up
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 # ── Terminal ─────────────────────────────────────────────────
 super + Return
     kitty
