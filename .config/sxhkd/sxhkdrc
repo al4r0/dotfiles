@@ -1,0 +1,52 @@
+# ── Terminal ─────────────────────────────────────────────────
+super + Return
+    kitty
+
+# ── Lanzador de apps ─────────────────────────────────────────
+super + @space
+    rofi -show drun
+
+# ── Recargar sxhkd ───────────────────────────────────────────
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# ── bspwm ────────────────────────────────────────────────────
+super + alt + {q,r}
+    bspc {quit,wm -r}
+
+super + {_,shift + }w
+    bspc node -{c,k}
+
+super + m
+    bspc desktop -l next
+
+super + y
+    bspc node newest.marked.local -n newest.!automatic.local
+
+super + g
+    bspc node -s biggest.window
+
+# ── Estado / flags ───────────────────────────────────────────
+super + {t,shift + t,s,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# ── Foco ─────────────────────────────────────────────────────
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+super + {Left,Down,Up,Right}
+    bspc node -f {west,south,north,east}
+
+# ── Mover ventana ────────────────────────────────────────────
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+super + shift + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east}
+
+# ── Escritorios ──────────────────────────────────────────────
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
+
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}'
