@@ -4,6 +4,8 @@ configuration {
     drun-display-format: "{name}";
     display-drun:   " Apps";
     display-run:    " Run";
+    terminal: "kitty";
+    run-shell-command: "{terminal} -e {cmd}";
 }
 
 * {

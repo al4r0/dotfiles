@@ -24,7 +24,7 @@ super + Escape
 super + alt + {q,r}
     bspc {quit,wm -r}
 
-super + {_,shift + }w
+super + {_,shift + }q
     bspc node -{c,k}
 
 super + m
@@ -60,3 +60,10 @@ super + {1-9,0}
 
 super + shift + {1-9,0}
     bspc node -d '^{1-9,10}'
+
+# ── Expandir     ──────────────────────────────────────────────
+super + alt + {Left,Down,Up,Right}
+  bspc node -z {left -20 0 || bspc node -z right -20 0, \
+                bottom 0 20 || bspc node -z top 0 20,\
+                top 0 -20 || bspc node -z bottom 0 -20,\
+                right 20 0 || bspc node -z left 20 0}
